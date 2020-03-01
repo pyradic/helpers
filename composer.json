@@ -1,0 +1,8 @@
+{
+    "name": "pyro/helpers",
+    "autoload": {
+        "psr-4": {
+            "Pyro\\Helpers\\": "src/"
+        }
+    }
+}
