@@ -1,8 +1,23 @@
 {
     "name": "pyro/helpers",
+    "description": "Various PyroCMS helpers",
+    "keywords": ["laravel","pyrocms"],
+    "homepage": "https://github.com/pyradic/helpers",
+    "authors": [
+        {"name": "Robin Radic","role": "Developer","email": "rradic@hotmail.com"}
+    ],
+
+    "license": "MIT",
+    "require": {
+    },
     "autoload": {
         "psr-4": {
-            "Pyro\\Helpers\\": "src/"
+            "Pyro\\Helpers\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
         }
     }
 }
