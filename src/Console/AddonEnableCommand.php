@@ -3,9 +3,7 @@
 namespace Pyro\Helpers\Console;
 
 use Anomaly\Streams\Platform\Addon\AddonCollection;
-use Anomaly\Streams\Platform\Addon\Extension\Command\DisableExtension;
 use Anomaly\Streams\Platform\Addon\Extension\Command\EnableExtension;
-use Anomaly\Streams\Platform\Addon\Module\Command\DisableModule;
 use Anomaly\Streams\Platform\Addon\Module\Command\EnableModule;
 use Illuminate\Console\Command;
 
@@ -17,9 +15,9 @@ class AddonEnableCommand extends Command
 
     public function handle(AddonCollection $addons)
     {
-        $disabled = $addons->installable()->disabled();
-        $slug    = $this->argument('addon') ?? $this->choice('Disable addon', $disabled->pluck('slug')->toArray());
-        $addon   = $disabled->findBySlug($slug);
+        $disabled = $addons->disabled();
+        $slug     = $this->argument('addon') ?? $this->choice('Disable addon', $disabled->pluck('slug')->toArray());
+        $addon    = $disabled->findBySlug($slug);
 
         if ( ! $addon) {
             return $this->error('Not a valid addon');
